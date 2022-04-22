@@ -11,7 +11,7 @@ import static com.cofomo.microservice.fournisseur.utils.Constants.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = FOURNISSEUR,uniqueConstraints={@UniqueConstraint(columnNames={REFERENCE})})
+@Table(name = FOURNISSEUR, uniqueConstraints = {@UniqueConstraint(columnNames = {REFERENCE})})
 public class FournisseurEntity {
 
     @Id
@@ -21,9 +21,6 @@ public class FournisseurEntity {
 
     @Column(name = NAME)
     private String name;
-
-    @Column(name = MATRICULE)
-    private String matricule;
 
     @Column(name = REFERENCE, unique = true)
     private String reference;

@@ -16,8 +16,6 @@ public class FournisseurDto {
 
     private String name;
 
-    private String matricule;
-
     private String reference;
 
 
