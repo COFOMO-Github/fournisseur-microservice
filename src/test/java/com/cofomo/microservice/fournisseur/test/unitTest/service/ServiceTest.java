@@ -36,7 +36,6 @@ public class ServiceTest extends AbstractServiceTest {
         assertNotNull(output);
         assertEquals(fournisseur2.getName(), output.getName());
         assertEquals(fournisseur2.getId(), output.getId());
-        assertEquals(fournisseur2.getPrice(), output.getPrice());
     }
 
     @Test
@@ -53,7 +52,6 @@ public class ServiceTest extends AbstractServiceTest {
         //GIVEN
         FournisseurDto fournisseur = FournisseurDto.builder()
                 .name("Samsung S20 Ultra")
-                .price(7700.90)
                 .build();
 
         //WHEN
@@ -63,7 +61,6 @@ public class ServiceTest extends AbstractServiceTest {
         assertNotNull(output);
         assertNotNull(output.getId());
         assertEquals(fournisseur.getName(), output.getName());
-        assertEquals(fournisseur.getPrice(), output.getPrice());
     }
 
     @Test

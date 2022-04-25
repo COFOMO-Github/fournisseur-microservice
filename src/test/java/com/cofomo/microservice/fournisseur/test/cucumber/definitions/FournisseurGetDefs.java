@@ -11,7 +11,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@CucumberContextConfiguration
+
 public class FournisseurGetDefs extends SpringIntegrationTest {
 
     String entreeFileName;

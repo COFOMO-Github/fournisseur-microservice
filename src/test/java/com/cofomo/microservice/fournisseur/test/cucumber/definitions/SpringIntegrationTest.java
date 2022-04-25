@@ -2,6 +2,7 @@ package com.cofomo.microservice.fournisseur.test.cucumber.definitions;
 
 import com.cofomo.microservice.fournisseur.FournisseurMicroserviceApplication;
 import com.github.tomakehurst.wiremock.WireMockServer;
+import io.cucumber.spring.CucumberContextConfiguration;
 import io.swagger.model.Fournisseur;
 import org.apache.hc.client5.http.classic.methods.HttpDelete;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
@@ -28,6 +29,7 @@ import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = FournisseurMicroserviceApplication.class)
+@CucumberContextConfiguration
 public class SpringIntegrationTest {
 
     static String excpectedValue;
@@ -171,7 +173,6 @@ public class SpringIntegrationTest {
         Fournisseur fournisseur = new Fournisseur();
         fournisseur.setId(jsonObject.get("id").toString());
         fournisseur.setName(jsonObject.get("name").toString());
-        fournisseur.setPrice(BigDecimal.valueOf(Double.parseDouble(jsonObject.get("price").toString())));
         return fournisseur;
     }
 

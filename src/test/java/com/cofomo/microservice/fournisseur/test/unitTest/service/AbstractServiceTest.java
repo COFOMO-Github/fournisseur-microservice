@@ -40,7 +40,6 @@ public abstract class AbstractServiceTest {
         return FournisseurEntity.builder()
                 .id(null)
                 .name("Iphone 11 PRO MAX")
-                .price(7000D)
                 .build();
     }
 
@@ -48,7 +47,6 @@ public abstract class AbstractServiceTest {
         FournisseurEntity entity = new FournisseurEntity();
         entity.setId(null);
         entity.setName("IphoneX");
-        entity.setPrice(4000D);
         return entity;
     }
 
@@ -56,7 +54,6 @@ public abstract class AbstractServiceTest {
         return FournisseurEntity.builder()
                 .id(null)
                 .name("Iphone 13")
-                .price(12000D)
                 .build();
     }
 

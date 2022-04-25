@@ -76,36 +76,28 @@ public abstract class AbstractControllerTest {
     public FournisseurEntity fournisseur1() {
         return FournisseurEntity.builder()
                 .name("Apple")
-                .matricule("FD4X7")
-                .reference(1L)
-                .price(7550D)
+                .reference("")
                 .build();
     }
 
     public FournisseurDto fournisseurDto1() {
         return FournisseurDto.builder()
                 .name("Apple")
-                .matricule("FD4X7")
-                .reference(3L)
-                .price(5000D)
+                .reference("3L")
                 .build();
     }
 
     public FournisseurEntity fournisseur2() {
         return FournisseurEntity.builder()
                 .name("Apple")
-                .matricule("FD4X7")
-                .reference(2L)
-                .price(3000D)
+                .reference("2L")
                 .build();
     }
 
     public FournisseurEntity fournisseur3() {
         return FournisseurEntity.builder()
                 .name("Apple")
-                .matricule("FD4X7")
-                .reference(4L)
-                .price(4000D)
+                .reference("4L")
                 .build();
     }
 

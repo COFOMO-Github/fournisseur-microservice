@@ -68,7 +68,7 @@ tasks.named('test') {
 }
 
 jacoco {
-	toolVersion = "0.8.6"
+	toolVersion = "0.8.3"
 	reportsDir = file("$buildDir/jacoco")
 }
 
