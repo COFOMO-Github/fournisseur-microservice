@@ -25,4 +25,7 @@ public class FournisseurEntity {
     @Column(name = REFERENCE, unique = true)
     private String reference;
 
+    @Column(name = COUNTRY, unique = true)
+    private String country;
+
 }

@@ -83,7 +83,7 @@ public abstract class AbstractControllerTest {
     public FournisseurDto fournisseurDto1() {
         return FournisseurDto.builder()
                 .name("Apple")
-                .reference("3L")
+                .pays("3L")
                 .build();
     }
 

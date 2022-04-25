@@ -29,7 +29,6 @@ import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = FournisseurMicroserviceApplication.class)
-@CucumberContextConfiguration
 public class SpringIntegrationTest {
 
     static String excpectedValue;

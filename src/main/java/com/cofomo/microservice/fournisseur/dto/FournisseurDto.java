@@ -18,5 +18,6 @@ public class FournisseurDto {
 
     private String reference;
 
+    private String country;
 
 }

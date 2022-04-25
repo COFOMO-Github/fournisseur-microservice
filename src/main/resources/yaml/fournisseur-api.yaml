@@ -131,7 +131,7 @@ definitions:
       name:
         type: string
         description: Name of the Fournisseur
-      matricule:
+      country:
         type: string
         description: Name of the Fournisseur
       reference:

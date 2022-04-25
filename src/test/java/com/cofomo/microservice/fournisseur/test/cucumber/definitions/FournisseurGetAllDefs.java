@@ -16,7 +16,7 @@ public class FournisseurGetAllDefs extends SpringIntegrationTest {
 
     @When("l'utilisateur fait un appel GET All {word}")
     public void getRestApiTest(String fileName) throws IOException, ParseException {
-        response = executeGetAll(fileName);
+        response = executeGetAll("entree/" + fileName);
     }
 
     @Then("le serveur retourne l'ensemble des données {int}")
@@ -30,7 +30,7 @@ public class FournisseurGetAllDefs extends SpringIntegrationTest {
 
     @When("l'utilisateur fait un appel GET All alors que la bdd est vide {word}")
     public void getRestApiTestGetWhen(String fileName) throws IOException, ParseException {
-        response = executeGetVide(fileName);
+        response = executeGetVide("entree/"+fileName);
     }
 
     @Then("le serveur retourne rien {int}")

@@ -16,7 +16,7 @@ public class FournisseurPostDefs extends SpringIntegrationTest {
 
     @When("l'utilisateur fait un appel POST {word}")
     public void theClientCallsPOSTFournisseur(String fileName) throws IOException, ParseException {
-        response = executePost(fileName);
+        response = executePost("entree/" + fileName);
     }
 
     @Then("le serveur gere l'appel POST avec success {int}")

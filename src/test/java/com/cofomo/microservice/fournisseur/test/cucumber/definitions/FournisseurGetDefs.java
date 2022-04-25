@@ -11,7 +11,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+@CucumberContextConfiguration
 public class FournisseurGetDefs extends SpringIntegrationTest {
 
     String entreeFileName;
@@ -19,13 +19,13 @@ public class FournisseurGetDefs extends SpringIntegrationTest {
 
     @Given("on a une fournisseur {word}")
     public void givenWeHaveOneFournisseur(String fileName) throws IOException, ParseException {
-        executePost(fileName);
-        entreeFileName=fileName;
+        entreeFileName = "entree/" + fileName;
+        executePost(entreeFileName);
     }
 
     @When("l'utilisateur fait un appel GET {int}")
     public void getRestApiTest(int code) throws IOException, ParseException {
-        response = executeGet(entreeFileName,code);
+        response = executeGet(entreeFileName, code);
     }
 
     @Then("le serveur gere l'appel GET avec success {int}")
@@ -39,13 +39,13 @@ public class FournisseurGetDefs extends SpringIntegrationTest {
 
     @Given("on a une fournisseur en entree {word}")
     public void givenWeHaveOneFournisseur2(String fileName) throws IOException, ParseException {
-        entreeFileName=fileName;
-        executePost(fileName);
+        entreeFileName = "entree/" + fileName;
+        executePost(entreeFileName);
     }
 
     @When("l'utilisateur fait un appel GET avec id non valide {int}")
-    public void getRestApiTestGetWhen(int code ) throws IOException, ParseException {
-        response = executeGetNotFound(entreeFileName,code);
+    public void getRestApiTestGetWhen(int code) throws IOException, ParseException {
+        response = executeGetNotFound(entreeFileName, code);
     }
 
     @Then("le serveur gere l'appel GET avec Not_Found excpetion {int}")

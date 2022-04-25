@@ -1,7 +1,7 @@
 Feature: Fournisseur rest API test
 
   Scenario: Test de l'appel DELETE du WS
-    Given on a bien une fournisseur entree/payloadEntree_Creation.json
+    Given on a bien une fournisseur payloadEntree_Creation.json
     When l'utilisateur fait un appel DELETE 1
     Then la fournisseur en question doit etre supprimée 200
 

@@ -17,7 +17,7 @@ public class FournisseurDeleteDefs extends SpringIntegrationTest {
 
     @Given("on a bien une fournisseur {word}")
     public void givenWeHaveOnefournisseur(String fileName) throws IOException, ParseException {
-        executePost( fileName);
+        executePost("entree/" + fileName);
     }
 
     @When("l'utilisateur fait un appel DELETE {int}")
