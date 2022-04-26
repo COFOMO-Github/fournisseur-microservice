@@ -36,6 +36,24 @@ public class SpringIntegrationTest {
     WireMockServer wireMockServer = new WireMockServer(options().dynamicPort());
     CloseableHttpClient httpClient = HttpClients.createDefault();
 
+    HttpResponse executeGetByReference(String filename, String code) throws IOException, ParseException {
+        wireMockServer.start();
+        configureFor("localhost", wireMockServer.port());
+        wireMockServer.stubFor(
+                get(urlEqualTo("/api/v1/fournisseur?reference=" + code))
+                        .willReturn(
+                                aResponse().withBody(
+                                        retrieveFromFile(filename)))
+        );
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet request = new HttpGet("http://localhost:" + wireMockServer.port()
+                + "/api/v1/fournisseur?reference=" + code);
+        HttpResponse httpResponse = httpClient.execute(request);
+        wireMockServer.stop();
+        return httpResponse;
+    }
+
+
     HttpResponse executeGet(String filename, int code) throws IOException, ParseException {
         wireMockServer.start();
         configureFor("localhost", wireMockServer.port());
@@ -110,6 +128,23 @@ public class SpringIntegrationTest {
         );
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet request = new HttpGet("http://localhost:" + wireMockServer.port() + "/api/v1/fournisseur/" + code);
+        HttpResponse httpResponse = httpClient.execute(request);
+        wireMockServer.stop();
+        return httpResponse;
+    }
+
+    HttpResponse executeGetRefNotFound(String filename, String ref) throws IOException {
+        wireMockServer.start();
+        configureFor("localhost", wireMockServer.port());
+        wireMockServer.stubFor(
+                get(urlEqualTo("/api/v1/fournisseur?reference=" + ref))
+                        .willReturn(
+                                aResponse()
+                                        .withStatus(404)
+                                        .withBody("No Supplier found with reference = "+ref))
+        );
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet request = new HttpGet("http://localhost:" + wireMockServer.port() + "/api/v1/fournisseur?reference=" + ref);
         HttpResponse httpResponse = httpClient.execute(request);
         wireMockServer.stop();
         return httpResponse;
