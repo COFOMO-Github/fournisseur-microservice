@@ -52,6 +52,8 @@ public class FournisseurServiceImpl implements FournisseurService {
     @Override
     public FournisseurDto getFournisseurByReference(String reference) {
         log.info("Service :  Envoi du Fournisseur qui contient le product dont l'ID est : " + reference);
-        return mapper.FournisseurEntityToFournisseurDto(fournisseurDao.findByReference(reference));
+        FournisseurEntity FournisseurEntity = fournisseurDao.findByReference(reference).orElseThrow(()
+                -> new NotFoundException("No Supplier found with reference = " + reference));
+        return mapper.FournisseurEntityToFournisseurDto(FournisseurEntity);
     }
 }
