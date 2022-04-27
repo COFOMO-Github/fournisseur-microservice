@@ -22,10 +22,10 @@ public class FournisseurEntity {
     @Column(name = NAME)
     private String name;
 
-    @Column(name = REFERENCE, unique = true)
+    @Column(name = REFERENCE)
     private String reference;
 
-    @Column(name = COUNTRY, unique = true)
+    @Column(name = COUNTRY)
     private String country;
 
 }
