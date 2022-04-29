@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Apple",
+    "country": "Maroc",
+    "reference": "REF_APPLE_STORE_1"
+  },
+  {
+    "id": "2",
+    "name": "Apple",
+    "country": "Maroc",
+    "reference": "REF_APPLE_STORE_2"
+  },
+  {
+    "id": "3",
+    "name": "Apple",
+    "country": "Maroc",
+    "reference": "REF_APPLE_STORE_3"
+  }
+]
